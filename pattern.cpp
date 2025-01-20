@@ -305,9 +305,22 @@ void print17(int n){
 }
 
 void print18(int n){
-
+     char ch = 'A'+n-1;
+    for(int i=0; i <n; i++){
+        for(int j=0; j<=i; j++){
+            cout << char(ch-j) << " ";
+        }
+        cout << endl;
+    }
 }
 
+void print19(int n){
+    for(int i=0; i < n; i++){
+        for(int j=0; j ; j++){
+
+        }
+    }
+}
 int main()
 {
     int n = 3;
@@ -316,6 +329,7 @@ int main()
     // print15(5);
     // print16(5);
     // print17(5);
-       print18(5);
+    // print18(3);
+       print19(4);
     
 };
