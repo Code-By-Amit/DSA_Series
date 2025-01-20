@@ -196,26 +196,126 @@ void print11(int n){
     }
 }
 
+// 1      1
+// 12    21
+// 123  321
+// 12344321
 
 void print12(int n){
+    int spaces = 2*(n-1);
+    for(int i=0; i <n; i++){
+        for(int j=0; j<=i;j++){
+            cout << j+1;
+        }
+        for(int k=1; k<=spaces;k++){
+            cout << " ";
+        }
+        for(int j=i+1;j>0;j--){
+            cout << j;
+        }
+            spaces-=2;
+        cout << endl;
+    }
+}
+
+
+// 1 
+// 2 3
+// 4 5 6
+// 7 8 9 10
+
+void print13(int n){
+    int num = 1;
+    for(int i=0;i<n;i++){
+        for(int j=0; j<=i; j++){
+            cout << num++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+// A 
+// A B
+// A B C
+// A B C D
+
+void print14(int n){
+    for(int i=0;i<n;i++){
+     char ch = 'A';
+        for(int j=0; j<=i; j++){
+            cout << ch++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+// A B C D 
+// A B C
+// A B
+// A
+
+void print15(int n){
+     for(int i=0;i<n;i++){
+     char ch = 'A';
+        for(int j=0; j<n-i; j++){
+            cout << ch++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+
+// A 
+// B B
+// C C C
+// D D D D
+
+void print16(int n){
+     char ch = 'A';
+     for(int i=0;i<n;i++){
+        for(int j=0; j<=i; j++){
+            cout << ch << " ";
+        }
+        ch++;
+        cout << endl;
+    }
+}
+
+
+//     A
+//    ABA
+//   ABCBA
+//  ABCDCBA
+// ABCDEDCBA
+void print17(int n){
+    for(int i=0;i<n;i++){
+        char ch = 'A';
+        for(int j=0;j<=n-i-2;j++){
+            cout << " ";
+        }
+        for(int j=0; j<i+1; j++){
+            cout << ch++;
+        }
+        char ch2 = ch-2;
+        for(int j=0; j<i; j++){
+            cout << ch2--;
+        }
+        cout << endl;
+    }
+}
+
+void print18(int n){
 
 }
 
 int main()
 {
     int n = 3;
-    print11(4);
-    // for(int i=0; i < n; i++){
-    //     for(int j=0;j<=i;j++){
-    //         cout << j+1 << " ";
-    //     }
-    //     for(int k=0;k<2 *(n -i);k++){
-    //         cout << "*";
-            
-    //     }
-    //     for(int l=i;l>=0;l--){
-    //         cout << l+1 << " ";
-    //     }
-    //     cout << endl;
-    // }
+    // print13(5);
+    // print14(5);
+    // print15(5);
+    // print16(5);
+    // print17(5);
+       print18(5);
+    
 };
