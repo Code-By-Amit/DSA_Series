@@ -1,0 +1,6 @@
+# Ignore all .exe files
+*.exe
+
+# Other ignored files
+*.log
+*.tmp
