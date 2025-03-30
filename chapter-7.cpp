@@ -1,4 +1,6 @@
 #include <iostream>
+#include <climits>
+#include <vector>
 
 using namespace std;
 
@@ -19,11 +21,26 @@ int reverseInteger(int n)
     return ans;
 }
 
+int reverse(int x) {
+    long ans = 0;
+    bool isNagative = x<0;
+    x = abs(x);
+    while(x>0){
+        int lastDigit = x%10;
+        if (ans > INT_MAX / 10 || (ans == INT_MAX / 10 && lastDigit > 7)) return 0;
+        if (ans < INT_MIN / 10 || (ans == INT_MIN / 10 && lastDigit < -8)) return 0;
+        ans = ans * 10 + lastDigit;
+        x/=10;
+    }
+    return isNagative ? -ans : ans;
+}
+
 int main()
 {
     // int a = 4;
     // int b = 8;
 
+    // cout << reverse(1534236469) << endl;
     // cout << "( a & b ): " << (a & b) << endl;
     // cout << "( a | b ): " << (a | b) << endl;
     // cout << "( a ^ b ): " << (a ^ b) << endl;
@@ -53,6 +70,5 @@ int main()
     // }
 
     // cout << "Reverse of 128 is : " << reverseInteger(128) << endl;
-
     return 0;
 }
