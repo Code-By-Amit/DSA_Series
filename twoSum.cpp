@@ -1,9 +1,25 @@
-#include <vector>
-#include <iostream>
+// Optimized. 
+class Solution { // Tc O(n) | Sc O(n)
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+      unordered_map<int,int> m;
 
-using namespace std;
+      for(int i=0; i<nums.size(); i++){
+        int a = target - nums[i];
+        if(m.find(a) != m.end()){
+            return {i, m[a]};
+        }else{
+            m[nums[i]] = i;
+        }
+      }
+        return {0,0};
+    }
+};
 
-vector<int> twoSum(vector<int>& nums, int target) {
+// BruteForce Approach
+class Solution {  // Tc O(n^2) | Sc O(1)
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
     vector<int> ans;
     int first = 0;
     int second = 1;
@@ -22,11 +38,4 @@ vector<int> twoSum(vector<int>& nums, int target) {
     }
     return ans;
 }
-
-int main(){
-    vector<int> nums = {3,2,3};
-    vector<int> ans = twoSum(nums,6);
-
-    cout << "first: " << ans[0] <<" second:" << ans[1] << endl;
-    return 0;
-}
+};
